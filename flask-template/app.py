@@ -18,6 +18,9 @@ from flask import Flask
 # from flask import render_template
 # from flask import request
 
+# Team:
+# Trent Gaylord
+# Angel Otero
 
 # -- Initialization section --
 app = Flask(__name__)
