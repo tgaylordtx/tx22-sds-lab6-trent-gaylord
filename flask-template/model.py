@@ -12,3 +12,22 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+def correct_answers(answers):
+    answers['NY'] = 'Correct!' if answers['NY'].lower() == 'albany' else 'Incorrect.'
+    answers['CA'] = 'Correct!' if answers['CA'].lower() == 'sacramento' else 'Incorrect.'
+    answers['TX'] = 'Correct!' if answers['TX'].lower() == 'austin' else 'Incorrect.'
+    answers['FL'] = 'Correct!' if answers['FL'].lower() == 'tallahassee' else 'Incorrect.'
+    answers['CO'] = 'Correct!' if answers['CO'].lower() == 'denver' else 'Incorrect.'
+
+    return answers
+
+def grade_answers(answers):
+    num_correct_ans = 0
+
+    if answers['NY'].lower() == 'albany': num_correct_ans += 1
+    if answers['CA'].lower() == 'sacramento': num_correct_ans += 1
+    if answers['TX'].lower() == 'austin': num_correct_ans += 1
+    if answers['FL'].lower() == 'tallahasee': num_correct_ans += 1
+    if answers['CO'].lower() == 'denver': num_correct_ans += 1
+
+    return (int)(num_correct_ans / 0.05)

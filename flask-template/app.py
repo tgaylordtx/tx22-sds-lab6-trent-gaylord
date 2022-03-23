@@ -15,8 +15,9 @@
 # ---- YOUR APP STARTS HERE ----
 # -- Import section --
 from flask import Flask
-# from flask import render_template
-# from flask import request
+from flask import render_template
+from flask import request
+from model import correct_answers, grade_answers
 
 # Team:
 # Trent Gaylord
@@ -28,6 +29,24 @@ app = Flask(__name__)
 
 # -- Routes section --
 @app.route('/')
+
 @app.route('/index')
 def index():
-    return "hello world"
+    return render_template('index.html')
+
+@app.route('/results', methods=['GET','POST'])
+def results():
+    if request.method =='GET':
+        return 'You have not taken the test'
+
+    answers = {'NY': request.form['New York'],
+    'CA': request.form['California'],
+    'TX': request.form['Texas'],
+    'FL': request.form['Florida'],
+    'CO': request.form['Colorado']
+    }
+    
+    grade = grade_answers(answers)
+    results = correct_answers(answers)
+    
+    return render_template('results.html', results=results, grade=grade)

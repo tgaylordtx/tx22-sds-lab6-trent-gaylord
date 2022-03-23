@@ -16,17 +16,20 @@
 
 <html>
     <head>
-        <title>Flask Template</title>
+        <title>Quiz</title>
         <link rel="stylesheet" href="../static/css/style.css">
     </head>
     <body>
+        <h1>State Capitals Quiz</h1>
+        <h5>Type the name of the capital for each of the following states:</h5>
         <form method="post" action="/results">
-            <input type="text" name="New York" placeholder="New York's Capital"/>
-            <input type="text" name="California" placeholder="California's Capital"/>
-            <input type="text" name="Texas" placeholder="Texas' Capital"/>
-            <input type="text" name="Florida" placeholder="Florida's Capital"/>
-            <input type="text" name="Colorado" placeholder="Colorado' Capital"/>
-            <input type="submit" value="Submit"/>
+
+            <li><input type="text" name="New York" placeholder="New York's Capital"/></li>
+            <li></li><input type="text" name="California" placeholder="California's Capital"/></li>
+            <li></li><input type="text" name="Texas" placeholder="Texas' Capital"/></li>
+            <li></li><input type="text" name="Florida" placeholder="Florida's Capital"/></li>
+            <li></li><input type="text" name="Colorado" placeholder="Colorado' Capital"/></li>
+            <li></li><input type="submit" value="Submit"/>
           </form>
     </body>
 </html>
